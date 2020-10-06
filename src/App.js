@@ -5,11 +5,12 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Home from './components/Home/Home';
+
 import Login from './components/Login/Login';
 import Register from './components/Register/Registr';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Event from './components/Event/Event';
+import Volunteer from './components/Volunteer/Volunteer';
 export const UserContext = createContext();
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
       <Router>
           <Switch>
             <Route path="/home">
-              <Home />
+              <Volunteer />
             </Route>
             <Route path="/login">
               <Login />
@@ -32,7 +33,7 @@ function App() {
               <Register />
             </PrivateRoute>
             <Route exact path="/">
-              <Home />
+              <Volunteer />
             </Route>
           </Switch>
       </Router>

@@ -7,7 +7,7 @@ const Event = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4007/events?email=' + loggedInUser.email, {
+    fetch('https://damp-everglades-78096.herokuapp.com/events?email='+loggedInUser.email, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -19,7 +19,7 @@ const Event = () => {
   }, [])
 
   function handleRemove(id) {
-    fetch(`http://localhost:4007/delete/${id}`, {
+    fetch(`https://damp-everglades-78096.herokuapp.com/delete/${id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())

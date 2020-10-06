@@ -5,20 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Volunteer = () => {
     const [task, setTask] = useState([]);
-    // const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-    // useEffect(() => {
-    //     fetch('http://localhost:4007/products',{
-    //         method: 'GET',
-    //         headers: {
-    //             'content-type': 'application/json',
-    //             authorization : `Bearer ${sessionStorage.getItem('token')}`
-    //         }
-    //     })
-    //     .then(res => res.json())
-    //     .then(data =>setBookings(data))
-    // },[])
     useEffect(()=> {
-        fetch('http://localhost:4007/products')
+        fetch('https://damp-everglades-78096.herokuapp.com/volunteer')
         .then(res=>res.json())
         .then(data =>setTask(data))
     },[])

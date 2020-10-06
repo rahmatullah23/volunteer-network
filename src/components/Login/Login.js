@@ -34,8 +34,7 @@ const Login = () => {
     const storeAuthToken = () => {
         firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
         .then(function(idToken) {
-          history.replace(from); // take from little up coz 2time need login, bt now ok
-            // console.log(idToken)            ------------[video 49.6 - 9.7time]
+          history.replace(from); 
             sessionStorage.setItem('token',idToken);
           }).catch(function(error) {
             // Handle error

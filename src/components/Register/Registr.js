@@ -12,7 +12,7 @@ const Register = () => {
   const onSubmit = data => {
       const orderDetails = {...loggedInUser, data,   orderTime: new Date()};
 
-      fetch('http://localhost:4007/addOrder', {
+      fetch('https://damp-everglades-78096.herokuapp.com/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -43,6 +43,9 @@ const {title} = useParams();
       <input name="email" defaultValue={loggedInUser.email} ref={register({ required: true })}  placeholder="Your Email"/>
       {errors.email && <span className="error">Email is required</span>}
      
+      <input name="date" ref={register({ required: true })}  placeholder="Date"/>
+      {errors.email && <span className="error">Date is required</span>}
+     
       <input name="description" ref={register({ required: true })}  placeholder="Description" />
       {errors.address && <span className="error">Description is required</span>}
      
@@ -50,7 +53,7 @@ const {title} = useParams();
       {errors.phone && <span className="error">Detail Task is required</span>}
 
       <Link to="/event"><input  type="submit" /></Link>
-      {/* <input  type="submit" /> */}
+      
     </form>
     </div>
     </div>
